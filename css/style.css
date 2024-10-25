@@ -1,0 +1,94 @@
+body {
+  font-family: "Comic Sans MS", cursive;
+  text-align: center;
+  background-color: #ffd6e7;
+}
+
+#pet-container {
+  margin: 20px auto;
+  padding: 20px;
+  width: 300px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#pet {
+  font-size: 100px;
+  margin: 20px;
+  transition: all 0.3s;
+}
+
+.button {
+  background-color: #ff69b4;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Comic Sans MS", cursive;
+}
+
+#buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #ccc;
+  color: #333;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+#stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.stat {
+  background-color: #fff0f5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#messages {
+  margin-top: 20px;
+  min-height: 50px;
+  color: #ff69b4;
+  font-weight: bold;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.jump {
+  animation: jump 0.5s;
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

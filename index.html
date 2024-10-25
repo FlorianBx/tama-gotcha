@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<title>Tama gotcha</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div id="pet-container">
+		<h1>Mon Animal Virtuel</h1>
+		<div id="pet">🐱</div>
+		<div id="stats">
+			<div class="stat">Faim: <span id="hunger">100</span>%</div>
+			<div class="stat">Bonheur: <span id="happiness">100</span>%</div>
+			<div class="stat">Énergie: <span id="energy">100</span>%</div>
+		</div>
+		<div id="buttons">
+			<button class="button" onclick="nourrir()">🍕 Nourrir</button>
+			<button class="button" onclick="jouer()">🎾 Jouer</button>
+			<button class="button" onclick="dormir()">😴 Dormir</button>
+		</div>
+		<div id="messages"></div>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+
+</html>
