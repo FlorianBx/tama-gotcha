@@ -1,5 +1,7 @@
 # 🐱 Tama Gotcha
 
+[Rendu final](https://deluxe-axolotl-cff7f5.netlify.app/)
+
 ## Description
 Tama Gotcha est un exercice de programmation JavaScript inspiré du célèbre Tamagotchi. Le but est de créer un animal virtuel interactif que vous devez maintenir en vie en gérant sa faim, son bonheur et son énergie.
 
