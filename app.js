@@ -7,6 +7,21 @@ const pet = {
   currentEmoji: 0,
 };
 
+function sleepTextAnimation() {
+  let zCounter = 0;
+  showMessage("💤  ");
+  const sleepInterval = setInterval(() => {
+    if (zCounter < 4) {
+      showMessage("💤  ".repeat(zCounter + 1));
+      zCounter++;
+    }
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(sleepInterval);
+  }, 5000);
+}
+
 function updateStats() {
   document.getElementById("hunger").textContent = pet.hunger;
   document.getElementById("happiness").textContent = pet.happiness;
@@ -17,7 +32,7 @@ function showMessage(message) {
   document.getElementById("messages").textContent = message;
 }
 
-function nourrir() {
+function feedTheAnimal() {
   if (pet.sleeping) {
     showMessage("Chut! Ton animal dort! 😴");
     return;
@@ -35,7 +50,7 @@ function nourrir() {
   updateStats();
 }
 
-function jouer() {
+function playWithTheAnimal() {
   if (pet.sleeping) {
     showMessage("Ton animal dort profondément ! 💤");
     return;
@@ -59,37 +74,22 @@ function jouer() {
   updateStats();
 }
 
-function dormir() {
-  if (pet.sleeping) {
-		document.getElementById('buttons.nthChild(3)').disabled = true;
-    return;
-  }
+function makeTheAnimalSleep() {
+	pet.sleeping = true;
+	document.getElementById("pet").style.transform = "rotate(90deg)";
+	pet.energy = Math.min(100, pet.energy + 50);
+	sleepTextAnimation();
+	updateStats();
 
-  pet.sleeping = true;
-  document.getElementById("pet").style.transform = "rotate(90deg)";
-  pet.energy = Math.min(100, pet.energy + 50);
-
-  // Créer une animation de "Zzz"
-  let zCounter = 0;
-  const sleepInterval = setInterval(() => {
-    if (zCounter < 5) {
-      showMessage("💤  ".repeat(zCounter + 1));
-      zCounter++;
-    }
-  }, 1000);
-
-  updateStats();
-
-  setTimeout(() => {
-    pet.sleeping = false;
-    document.getElementById("pet").style.transform = "rotate(0deg)";
-    showMessage("Ton animal se réveille ! 🌞");
-    clearInterval(sleepInterval); // Arrêter l'animation des Z
-    updateStats();
-  }, 5000);
+	setTimeout(() => {
+		pet.sleeping = false;
+		document.getElementById("pet").style.transform = "rotate(0deg)";
+		showMessage("Ton animal se réveille ! 🌞");
+		updateStats();
+	}, 5000);
 }
 
-function changerAnimal() {
+function selectAnotherAnimal() {
   pet.currentEmoji = (pet.currentEmoji + 1) % pet.emojis.length;
   document.getElementById("pet").textContent = pet.emojis[pet.currentEmoji];
 }
@@ -111,4 +111,4 @@ setInterval(() => {
   }
 }, 5000);
 
-document.getElementById("pet").onclick = changerAnimal;
+document.getElementById("pet").onclick = selectAnotherAnimal;
