@@ -1,10 +1,10 @@
-import { lifeGestion } from "./modules/utils.js";
+import { lifeGestion } from './modules/utils.js';
 import {
   pet,
   feedTheAnimal,
   playWithTheAnimal,
   makeTheAnimalSleep,
-} from "./modules/main.js";
+} from './modules/main.js';
 
 lifeGestion(pet);
 
