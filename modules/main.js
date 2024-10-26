@@ -52,6 +52,7 @@ export function playWithTheAnimal() {
 }
 
 export function makeTheAnimalSleep() {
+	document.getElementById('sleep-button').disabled = true;
   pet.sleeping = true;
   document.getElementById("pet").style.transform = "rotate(90deg)";
   pet.energy = Math.min(100, pet.energy + 50);
@@ -59,6 +60,7 @@ export function makeTheAnimalSleep() {
   updateStats(pet);
 
   setTimeout(() => {
+		document.getElementById('sleep-button').disabled = false;
     pet.sleeping = false;
     document.getElementById("pet").style.transform = "rotate(0deg)";
     showMessage("Ton animal se réveille ! 🌞");
