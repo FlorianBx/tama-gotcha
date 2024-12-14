@@ -1,6 +1,7 @@
-import { animals } from '../datas/animals.js';
+import { animals } from '../datas/animals';
+import { Pet } from '../types/Pet';
 
-export const pet = {
+export const pet: Pet = {
   hunger: 100,
   happiness: 100,
   energy: 100,
@@ -8,7 +9,7 @@ export const pet = {
   currentAnimal: 0
 };
 
-export function changeAnimal() {
+export function changeAnimal(): String {
   pet.currentAnimal = (pet.currentAnimal + 1) % animals.length;
   return animals[pet.currentAnimal];
 }

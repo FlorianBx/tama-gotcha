@@ -1,7 +1,7 @@
 import { pet, changeAnimal } from './game/pet'
-import { feed, play, sleep } from './game/actions.js'
-import { decreaseStats } from './game/stats.js'
-import { checkAndShowWarnings } from './ui/display.js'
+import { feed, play, sleep } from './game/actions'
+import { decreaseStats } from './game/stats'
+import { checkAndShowWarnings } from './ui/display'
 
 declare global {
   interface Window {
