@@ -1,16 +1,25 @@
-export function updateStats(pet) {
-  document.getElementById('hunger').textContent = pet.hunger;
-  document.getElementById('happiness').textContent = pet.happiness;
-  document.getElementById('energy').textContent = pet.energy;
+import { Pet } from '../types/Pet';
+
+const hungerElement = document.getElementById('hunger');
+const happinessElement = document.getElementById('happiness');
+const energyElement = document.getElementById('energy');
+
+
+export function updateStats(pet: Pet) {
+	if (hungerElement === null || happinessElement === null || energyElement === null) return;
+  hungerElement.textContent = pet.hunger.toString();
+	happinessElement.textContent = pet.happiness.toString();
+	energyElement.textContent = pet.energy.toString();
 }
 
 export function initStats() {
-  document.getElementById('hunger').textContent = 100;
-  document.getElementById('happiness').textContent = 100;
-  document.getElementById('energy').textContent = 100;
+	if (hungerElement === null || happinessElement === null || energyElement === null) return;
+  hungerElement.textContent = String(100);
+	happinessElement.textContent = String(100);
+	energyElement.textContent = String(100);
 }
 
-export function decreaseStats(pet) {
+export function decreaseStats(pet: Pet) {
   if (!pet.sleeping) {
     pet.hunger = Math.max(0, pet.hunger - 5);
     pet.happiness = Math.max(0, pet.happiness - 5);
