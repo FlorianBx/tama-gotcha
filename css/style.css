@@ -1,65 +1,74 @@
 body {
-  font-family: "Comic Sans MS", cursive;
+  font-family: system-ui, -apple-system, sans-serif;
   text-align: center;
-  background-color: #ffd6e7;
+  background-color: #161616;
+  color: #f8fafc;
+  margin: 0;
+  padding: 20px;
 }
 
 #pet-container {
   margin: 20px auto;
-  padding: 20px;
-  width: 300px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  max-width: 360px;
+  background: rgb(45, 52, 69);
+  background: radial-gradient(circle, rgba(45, 52, 69, 1) 0%, rgba(26, 28, 37, 1) 68%);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 #pet {
   font-size: 100px;
-  margin: 20px;
-  transition: all 0.3s;
+  margin: 32px;
+	cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .button {
-  background-color: #ff69b4;
+  background-color: #efefef;
   border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 20px;
-  color: white;
+  padding: 12px 24px;
+  margin: 6px;
+  border-radius: 12px;
+  color: black;
   cursor: pointer;
   font-size: 16px;
-  font-family: "Comic Sans MS", cursive;
+  font-family: inherit;
+  transition: all 0.2s ease;
+	filter: grayscale(100%);
 }
 
 #buttons button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
-  background-color: #ccc;
-  color: #333;
+  background-color: #475569;
 }
 
 .button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  background-color: #4338ca;
 }
 
 #stats {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px;
 }
 
 .stat {
-  background-color: #fff0f5;
-  padding: 10px;
-  border-radius: 10px;
+  background-color: #334155;
+  padding: 12px;
+  border-radius: 12px;
+  color: #e2e8f0;
 }
 
 #messages {
-  margin-top: 20px;
+  margin-top: 24px;
   min-height: 50px;
-  color: #ff69b4;
-  font-weight: bold;
+  color: #efefef;
+  font-weight: 500;
 }
 
 .shake {
