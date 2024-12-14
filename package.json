@@ -1,0 +1,17 @@
+{
+  "name": "tama-gotcha",
+  "version": "1.0.0",
+  "description": "A super project for learn JS/TS",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "type-check": "tsc --noEmit"
+  },
+  "author": "Florian Beaumont",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}
