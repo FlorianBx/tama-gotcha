@@ -1,18 +1,29 @@
-import { pet, changeAnimal } from './game/pet.js'
+import { pet, changeAnimal } from './game/pet'
 import { feed, play, sleep } from './game/actions.js'
 import { decreaseStats } from './game/stats.js'
 import { checkAndShowWarnings } from './ui/display.js'
 
+declare global {
+  interface Window {
+    feedTheAnimal: () => void
+    playWithTheAnimal: () => void
+    makeTheAnimalSleep: () => void
+  }
+}
+
 function initGame() {
   window.feedTheAnimal = feed
   window.playWithTheAnimal = play
-  window.makeTheAnimalSleep = sleep
+	window.makeTheAnimalSleep = sleep
 
-  document.getElementById('pet').onclick = () => {
-    const newAnimal = changeAnimal()
-    document.getElementById('pet').textContent = newAnimal
-  }
-
+  /** Ajout d'une condition pour ne pas faire de changement d'animal si le pet n'est pas encore créé */
+  const pet = document.getElementById('pet')
+	if (pet) {
+		pet.onclick = () => {
+			const newAnimal = changeAnimal()
+			pet.textContent = newAnimal
+		}
+	}
   startLifeCycle()
 }
 
