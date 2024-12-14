@@ -47,7 +47,9 @@ body {
 
 .button:hover {
   transform: scale(1.05);
-  background-color: #4338ca;
+  background-color: #161616;
+	color: #efefef;
+	filter: grayscale(0%);
 }
 
 #stats {
