@@ -11,6 +11,7 @@ import { pet } from './pet.js';
 import { showMessage } from '../ui/display.js';
 import { updateStats } from './stats.js';
 
+const petElement = document.getElementById('pet');
 
 export function feed() {
   if (pet.sleeping) {
@@ -18,7 +19,8 @@ export function feed() {
     return;
   }
 
-  const petElement = document.getElementById('pet');
+	if (petElement === null) return;
+
   petElement.classList.add('jump');
   setTimeout(() => petElement.classList.remove('jump'), 500);
 
@@ -40,7 +42,8 @@ export function play() {
     return;
   }
 
-  const petElement = document.getElementById('pet');
+	if (petElement === null) return;
+
   petElement.classList.add('shake');
   setTimeout(() => petElement.classList.remove('shake'), 500);
 
@@ -55,7 +58,9 @@ export function play() {
 
 export function sleep() {
   const petElement = document.getElementById('pet');
-  const sleepButton = document.getElementById('sleep-button');
+  const sleepButton = document.getElementById('sleep-button') as HTMLButtonElement;
+
+	if (petElement === null || sleepButton === null) return;
 
   sleepButton.disabled = true;
   
