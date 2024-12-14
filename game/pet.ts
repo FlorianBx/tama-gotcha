@@ -9,7 +9,7 @@ export const pet: Pet = {
   currentAnimal: 0
 };
 
-export function changeAnimal(): String {
+export function changeAnimal(): string {
   pet.currentAnimal = (pet.currentAnimal + 1) % animals.length;
   return animals[pet.currentAnimal];
 }

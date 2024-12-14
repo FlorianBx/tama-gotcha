@@ -14,16 +14,17 @@ declare global {
 function initGame() {
   window.feedTheAnimal = feed
   window.playWithTheAnimal = play
-	window.makeTheAnimalSleep = sleep
+  window.makeTheAnimalSleep = sleep
 
   /** Ajout d'une condition pour ne pas faire de changement d'animal si le pet n'est pas encore créé */
   const pet = document.getElementById('pet')
-	if (pet) {
-		pet.onclick = () => {
-			const newAnimal = changeAnimal()
-			pet.textContent = newAnimal
-		}
-	}
+
+  if (!pet) return
+
+  pet.onclick = () => {
+    const newAnimal = changeAnimal()
+    pet.textContent = newAnimal
+  }
   startLifeCycle()
 }
 
